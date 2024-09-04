@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+
+  postgres:
+    image: postgres:15.1
+    container_name: db
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+
+  frontend:
+    image: nginx:latest
+    container_name: front
+    ports:
+      - "80:80"
+    restart: unless-stopped

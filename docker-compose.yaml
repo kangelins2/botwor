@@ -1,21 +1,23 @@
 version: "3"
 
 services:
-
-  postgres:
-    image: postgres:15.1
-    container_name: db
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
-    restart: unless-stopped
+      - POSTGRES_DB=${DB_DATABASE}
     ports:
       - "5432:5432"
 
-  frontend:
-    image: nginx:latest
-    container_name: front
+  app:
+    build: .
+    env_file:
+      - ".env"
     ports:
-      - "80:80"
-    restart: unless-stopped
+      - "8000:8000"
+
+volumes:
+  postgres_data:

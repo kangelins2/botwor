@@ -1,7 +1,11 @@
-FROM python:3.12-slim-bullseye
+FROM python:3.12-slim
 
-WORKDIR /opt/app
+WORKDIR /usr/app
 
-COPY main.py .
+COPY ./requerements.txt requirements.txt
 
-CMD python main.py
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD ["python", "main.pyg"]

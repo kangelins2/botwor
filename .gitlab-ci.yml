@@ -8,7 +8,6 @@ include:
   - remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/jobs/utils/with-submodules&.yml
   - remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/workflow/review-on-mr&.yml
 variables:
-  DEPLOYMENT_LOAD_ENV_SECRETS: token
   DEPLOY_FROM: .k8s
   MAINTAINERS: vapvapapvpva@yandex.ru
   POSTGRES_ENABLED: 'true'

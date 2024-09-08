@@ -13,4 +13,5 @@ variables:
   POSTGRES_ENABLED: 'true'
 
   HTTP_ENABLED: "true"
+  HTTP_SUBDOMAIN_ON: ".trendsurfers.ru"
   HTTP_DOMAIN: "tma-jetlag-promo-backend.trendsurfers.ru"

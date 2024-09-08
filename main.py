@@ -101,7 +101,7 @@ async def download_price(message: Message):
 
 
 async def start_bot(tg: TaskGroup):
-    bot = Bot(token=BOT_TOKEN)
+    bot = Bot(token=os.getenv("TG_BOT_TOKEN"))
     await dp.start_polling(bot)
     tg.cancel_scope.cancel()
 

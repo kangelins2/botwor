@@ -11,13 +11,12 @@ import uvicorn
 
 from pydantic import BaseModel
 from fastapi import FastAPI
-from aiogram import Dispatcher, Bot, F
+from aiogram import Dispatcher, Bot
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Mapped, mapped_column, declarative_base
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo, Message, CallbackQuery, FSInputFile
 
 from aiogram.filters import CommandStart, Command
-from token_tg import BOT_TOKEN
 from dotenv import load_dotenv
 
 
@@ -101,7 +100,7 @@ async def download_price(message: Message):
 
 
 async def start_bot(tg: TaskGroup):
-    bot = Bot(token=BOT_TOKEN)
+    bot = Bot(token=os.getenv("TG_BOT_TOKEN"))
     await dp.start_polling(bot)
     tg.cancel_scope.cancel()
 
@@ -124,4 +123,3 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
-

@@ -2,11 +2,11 @@ argocd staging:
   variables:
     S_TG_BOT_TOKEN: 7343501207:AAFRXuFq8xXwP6FiIyTIESuuVwpKj10ts_w
 include:
-- remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/global/stages&.yml
-- remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/jobs/build/kaniko&.yml
-- remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/jobs/deploy/argocd-staging&.yml
-- remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/jobs/utils/with-submodules&.yml
-- remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/workflow/review-on-mr&.yml
+  - remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/global/stages&.yml
+  - remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/jobs/build/kaniko&.yml
+  - remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/jobs/deploy/argocd-staging&.yml
+  - remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/jobs/utils/with-submodules&.yml
+  - remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/workflow/review-on-mr&.yml
 variables:
   DEPLOYMENT_LOAD_ENV_SECRETS: TG_BOT_TOKEN
   DEPLOY_FROM: .k8s

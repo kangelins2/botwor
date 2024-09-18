@@ -17,7 +17,6 @@ from sqlalchemy.orm import sessionmaker, Mapped, mapped_column, declarative_base
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo, Message, CallbackQuery, FSInputFile
 
 from aiogram.filters import CommandStart, Command
-from token_tg import BOT_TOKEN
 from dotenv import load_dotenv
 
 
@@ -76,11 +75,11 @@ async def save_email(email: EmailRequest):
 
 @dp.message(CommandStart())
 async def url_command(message: Message):
-    await message.answer("Welcome!", reply_markup=ikb_donate)
+    await message.answer("welcome to viperr", reply_markup=ikb_donate)
 
 
 ikb_donate = InlineKeyboardMarkup(row_width=1, inline_keyboard=[[
-                                          InlineKeyboardButton(text='gg',
+                                          InlineKeyboardButton(text='let’s go',
                                                                     web_app=WebAppInfo(url=f'https://google.com'))
                                       ]
                                   ])
@@ -124,4 +123,3 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
-

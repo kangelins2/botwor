@@ -11,12 +11,13 @@ import uvicorn
 
 from pydantic import BaseModel
 from fastapi import FastAPI
-from aiogram import Dispatcher, Bot
+from aiogram import Dispatcher, Bot, F
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Mapped, mapped_column, declarative_base
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo, Message, CallbackQuery, FSInputFile
 
 from aiogram.filters import CommandStart, Command
+from token_tg import BOT_TOKEN
 from dotenv import load_dotenv
 
 
@@ -123,3 +124,4 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
+

@@ -8,7 +8,7 @@ include:
 - remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/jobs/utils/with-submodules&.yml
 - remote: https://devops-pipeline-manager-production.trendsurfers.ru/manifest.yml?sources=/ci/workflow/review-on-mr&.yml
 variables:
-  DEPLOYMENT_LOAD_ENV_SECRETS: TG_BOT_TOKEN
+  DEPLOYMENT_LOAD_ENV_SECRETS: TG_BOT_TOKEN,token
   DEPLOY_FROM: .k8s
   HTTP_DOMAIN: tma-jetlag-promo-backend.trendsurfers.ru
   HTTP_ENABLED: 'true'

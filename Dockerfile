@@ -6,6 +6,6 @@ COPY requerements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
-COPY botwor .
+COPY . .
 
 CMD ["python", "main.py"]

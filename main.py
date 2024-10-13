@@ -9,7 +9,7 @@ import dp
 import pandas as pd
 import uvicorn
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from fastapi import FastAPI
 from aiogram import Dispatcher, Bot, F
 from sqlalchemy import create_engine
@@ -59,7 +59,7 @@ engine, session_factory = db_setup()
 
 
 class EmailRequest(BaseModel):
-    email: str
+    email: str = Field(examples=["makaka@mail.com"])
 
 
 # Определяем маршрут для обработки POST-запроса
